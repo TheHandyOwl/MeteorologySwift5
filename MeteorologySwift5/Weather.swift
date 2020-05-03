@@ -20,7 +20,7 @@ struct Weather {
     let pressure : Double
     let clouds : Int
     let windSpeed : Double
-    let rain3Hours : Double
+    let rain3Hours : Double?
     
     init(datosTiempo : [ String : AnyObject ]) {
         self.city = datosTiempo["name"] as! String
@@ -32,7 +32,7 @@ struct Weather {
         self.latitude = coordDict["lat"] as! Double
         self.longitude = coordDict["lon"] as! Double
         
-        let weatherDict = datosTiempo["weather"] as! [String:AnyObject]
+        let weatherDict = datosTiempo["weather"]![0] as! [String:AnyObject]
         self.weatherDescription = weatherDict["description"] as! String
         
         let mainDict = datosTiempo["main"] as! [String:AnyObject]
@@ -48,8 +48,12 @@ struct Weather {
         self.windSpeed = windDict["speed"] as! Double
         
         //self.rain3Hours = datosTiempo["rain"]!["3h"] as! Double
-        let rainDict = datosTiempo["rain"] as! [String:AnyObject]
-        self.rain3Hours = rainDict["3h"] as! Double
+        if datosTiempo["rain"] != nil {
+            let rainDict = datosTiempo["rain"] as! [String : AnyObject]
+            self.rain3Hours = rainDict["3h"] as? Double
+        } else {
+            self.rain3Hours = nil
+        }
     }
     
 }

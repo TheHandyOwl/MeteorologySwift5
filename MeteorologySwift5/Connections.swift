@@ -10,8 +10,8 @@ import UIKit
 
 class Connections {
 
-    // Example -> "http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=myAPIKey"
-    fileprivate let baseURL : String = "http://api.openweathermap.org/data/2.5/weather"
+    // Example -> "https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=myAPIKey"
+    fileprivate let baseURL : String = "https://api.openweathermap.org/data/2.5/weather"
     fileprivate let openWeatherMapKey : String = "0f8c1e1b87cc8cf521195b272bc9a22c"
     
     // Request by city
@@ -41,9 +41,9 @@ extension Connections {
         
         let urlRequest : NSMutableURLRequest = NSMutableURLRequest(url: weatherRequestURL)
         
-        let task = session.dataTask(with: urlRequest as URLRequest) { (data, resonse, error) -> Void in
-            
-            let httpResponse = resonse as! HTTPURLResponse
+        let task = session.dataTask(with: urlRequest as URLRequest) { (data, response, error) -> Void in
+
+            let httpResponse = response as! HTTPURLResponse
             
             let statusCode = httpResponse.statusCode
             

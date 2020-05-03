@@ -13,6 +13,7 @@ import CoreLocation
 class ViewController: UIViewController {
     
     let locationManager = CLLocationManager()
+    var getWeather : Connections!
 
     @IBOutlet weak var textCity: UITextField!
     @IBOutlet weak var labelCity: UILabel!
@@ -28,15 +29,49 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setupUI()
+        
+        getLocation()
+        
     }
 
     @IBAction func buttonGetWeatherByCity(_ sender: Any) {
+        
+        guard let text = textCity.text, !text.trimmed.isEmpty else {
+            return
+        }
+        getWeather = Connections()
+        getWeather.requestWeatherByCity(text.urlEncoded)
+
     }
     
     @IBAction func buttonGetWeatherByGeolocation(_ sender: Any) {
     }
     
+}
+
+extension ViewController {
+    
+    func setupUI() {
+
+        textCity.text = ""
+        textCity.placeholder = "Buscar por nombre de ciudad ..."
+        textCity.delegate = self // To hide keyboard
+        textCity.enablesReturnKeyAutomatically = true
+        
+        labelCity.text = ""
+        labelDescription.text = ""
+
+        labelTemperature.text = ""
+        labelCloudy.text = ""
+        labelWind.text = ""
+        labelRainy.text = ""
+        labelHumidity.text = ""
+
+        //imageBackground.image
+        
+    }
 }
 
 extension ViewController : CLLocationManagerDelegate {
@@ -79,6 +114,24 @@ extension ViewController : CLLocationManagerDelegate {
         alertView.addAction(button)
         dismiss(animated: true, completion: nil)
 
+    }
+    
+}
+
+extension ViewController : UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textCity.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        textCity.text = "" // Clear button should be enabled
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
 }
