@@ -13,6 +13,7 @@
 		073E82F1245EDEC500E40CB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073E82EF245EDEC500E40CB8 /* Main.storyboard */; };
 		073E82F3245EDEC800E40CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073E82F2245EDEC800E40CB8 /* Assets.xcassets */; };
 		073E82F6245EDEC800E40CB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073E82F4245EDEC800E40CB8 /* LaunchScreen.storyboard */; };
+		073E82FE245F2C5300E40CB8 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073E82FD245F2C5300E40CB8 /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		073E82F2245EDEC800E40CB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		073E82F5245EDEC800E40CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		073E82F7245EDEC800E40CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073E82FD245F2C5300E40CB8 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				073E82E9245EDEC500E40CB8 /* AppDelegate.swift */,
 				073E82EB245EDEC500E40CB8 /* SceneDelegate.swift */,
 				073E82ED245EDEC500E40CB8 /* ViewController.swift */,
+				073E82FD245F2C5300E40CB8 /* Weather.swift */,
 				073E82EF245EDEC500E40CB8 /* Main.storyboard */,
 				073E82F2245EDEC800E40CB8 /* Assets.xcassets */,
 				073E82F4245EDEC800E40CB8 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073E82FE245F2C5300E40CB8 /* Weather.swift in Sources */,
 				073E82EE245EDEC500E40CB8 /* ViewController.swift in Sources */,
 				073E82EA245EDEC500E40CB8 /* AppDelegate.swift in Sources */,
 				073E82EC245EDEC500E40CB8 /* SceneDelegate.swift in Sources */,
