@@ -15,6 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s9x-ic-44j">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar nombre de ciudad ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IMf-Un-mwX">
                                 <rect key="frame" x="16" y="20" width="288" height="34"/>
                                 <constraints>
@@ -32,6 +35,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <state key="normal" title="Buscar por ciudad"/>
+                                <connections>
+                                    <action selector="buttonGetWeatherByCity:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TdX-fN-SIL"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CIUDAD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zs-Ja-rdq">
                                 <rect key="frame" x="16" y="140" width="288" height="18"/>
@@ -61,6 +67,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <state key="normal" title="¿Qué tiempo hace aquí?"/>
+                                <connections>
+                                    <action selector="buttonGetWeatherByGeolocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hss-se-Qqe"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperatura:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDp-6n-xBy">
                                 <rect key="frame" x="26" y="243" width="130" height="18"/>
@@ -174,15 +183,19 @@
                             <constraint firstItem="1y7-xY-VP6" firstAttribute="leading" secondItem="1zs-Ja-rdq" secondAttribute="leading" id="7w8-hv-zfd"/>
                             <constraint firstItem="1zs-Ja-rdq" firstAttribute="trailing" secondItem="zhf-vU-hP3" secondAttribute="trailing" id="809-Rz-VSw"/>
                             <constraint firstItem="MTE-eI-AiJ" firstAttribute="leading" secondItem="Djo-py-xIc" secondAttribute="leading" id="9kS-cn-rci"/>
+                            <constraint firstItem="s9x-ic-44j" firstAttribute="centerX" secondItem="1y7-xY-VP6" secondAttribute="centerX" id="BDX-U6-GOF"/>
                             <constraint firstItem="gug-pO-tw7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="69" id="BKa-A3-zKm"/>
+                            <constraint firstItem="s9x-ic-44j" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Bky-Wd-fif"/>
                             <constraint firstItem="nl8-da-3zf" firstAttribute="baseline" secondItem="Djo-py-xIc" secondAttribute="baseline" id="CZ5-NY-vgZ"/>
                             <constraint firstItem="xDp-6n-xBy" firstAttribute="top" secondItem="1y7-xY-VP6" secondAttribute="bottom" constant="52" id="DuD-Zw-Aqg"/>
+                            <constraint firstItem="s9x-ic-44j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EDo-q8-UgG"/>
                             <constraint firstItem="nl8-da-3zf" firstAttribute="top" secondItem="y9I-VN-3NX" secondAttribute="bottom" constant="14" id="Ev0-Fa-QRf"/>
                             <constraint firstItem="Db9-6x-Fn1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="69" id="FH6-u6-bMC"/>
                             <constraint firstItem="K2P-9o-db4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-69" id="GfA-AJ-Dv1"/>
                             <constraint firstItem="xDp-6n-xBy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-69" id="KP7-ed-u1G"/>
                             <constraint firstItem="IMf-Un-mwX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KVB-Bf-LVz"/>
                             <constraint firstItem="Djo-py-xIc" firstAttribute="leading" secondItem="gug-pO-tw7" secondAttribute="leading" id="OXe-uj-cNG"/>
+                            <constraint firstItem="s9x-ic-44j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OyJ-7o-Ub6"/>
                             <constraint firstItem="zhf-vU-hP3" firstAttribute="leading" secondItem="IMf-Un-mwX" secondAttribute="leading" id="QH2-2X-6bK"/>
                             <constraint firstItem="xDp-6n-xBy" firstAttribute="trailing" secondItem="K2P-9o-db4" secondAttribute="trailing" id="Qzk-dP-6cx"/>
                             <constraint firstItem="RmS-bu-roK" firstAttribute="top" secondItem="nl8-da-3zf" secondAttribute="bottom" constant="14" id="Rea-wB-441"/>
@@ -193,6 +206,7 @@
                             <constraint firstItem="nl8-da-3zf" firstAttribute="trailing" secondItem="RmS-bu-roK" secondAttribute="trailing" id="Usp-qr-fJY"/>
                             <constraint firstItem="K2P-9o-db4" firstAttribute="top" secondItem="xDp-6n-xBy" secondAttribute="bottom" constant="14" id="WXJ-ma-N1V"/>
                             <constraint firstItem="K2P-9o-db4" firstAttribute="leading" secondItem="y9I-VN-3NX" secondAttribute="leading" id="Z8h-CG-QqD"/>
+                            <constraint firstItem="s9x-ic-44j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bBf-SH-XqS"/>
                             <constraint firstItem="y9I-VN-3NX" firstAttribute="top" secondItem="K2P-9o-db4" secondAttribute="bottom" constant="14" id="bda-TR-HKL"/>
                             <constraint firstItem="RmS-bu-roK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-69" id="c1V-Cv-RuJ"/>
                             <constraint firstItem="Djo-py-xIc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="69" id="cyR-Hr-YAR"/>
@@ -219,6 +233,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageBackground" destination="s9x-ic-44j" id="nL8-yX-VnQ"/>
+                        <outlet property="labelCity" destination="1zs-Ja-rdq" id="tXs-1X-jw2"/>
+                        <outlet property="labelCloudy" destination="Db9-6x-Fn1" id="XrP-Nf-5DO"/>
+                        <outlet property="labelDescription" destination="1y7-xY-VP6" id="du5-30-PQp"/>
+                        <outlet property="labelHumidity" destination="gug-pO-tw7" id="OHy-na-puS"/>
+                        <outlet property="labelRainy" destination="Djo-py-xIc" id="6hN-9q-TX9"/>
+                        <outlet property="labelTemperature" destination="QmS-DZ-t1B" id="lOr-Kn-S5M"/>
+                        <outlet property="labelWind" destination="MTE-eI-AiJ" id="clA-U8-osq"/>
+                        <outlet property="textCity" destination="IMf-Un-mwX" id="uVg-zM-pES"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

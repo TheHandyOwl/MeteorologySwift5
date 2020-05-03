@@ -47,7 +47,7 @@ struct Weather {
         let windDict = datosTiempo["wind"] as! [String:AnyObject]
         self.windSpeed = windDict["speed"] as! Double
         
-        //self.rain3Hours = datosTiempo["wind"]!["3h"] as! Double
+        //self.rain3Hours = datosTiempo["rain"]!["3h"] as! Double
         let rainDict = datosTiempo["rain"] as! [String:AnyObject]
         self.rain3Hours = rainDict["3h"] as! Double
     }
