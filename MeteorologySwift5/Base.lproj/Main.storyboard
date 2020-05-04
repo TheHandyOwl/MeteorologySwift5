@@ -131,28 +131,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Ha llovido?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl8-da-3zf">
-                                <rect key="frame" x="26" y="339" width="130" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="kpT-ny-vgd"/>
-                                    <constraint firstAttribute="height" constant="18" id="tkQ-dT-oNQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-py-xIc">
-                                <rect key="frame" x="164" y="339" width="130" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="Rkd-ye-9AX"/>
-                                    <constraint firstAttribute="width" constant="130" id="Sy4-5C-Ai8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humedad:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmS-bu-roK">
-                                <rect key="frame" x="26" y="371" width="130" height="18"/>
+                                <rect key="frame" x="26" y="337" width="130" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="BXt-Ao-SMw"/>
                                     <constraint firstAttribute="width" constant="130" id="K0U-Rh-ZqO"/>
@@ -162,10 +142,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gug-pO-tw7">
-                                <rect key="frame" x="164" y="371" width="130" height="18"/>
+                                <rect key="frame" x="164" y="337" width="130" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="3Gc-9v-TGm"/>
                                     <constraint firstAttribute="height" constant="18" id="Vxu-A2-XQV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Ha llovido?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl8-da-3zf">
+                                <rect key="frame" x="26" y="365" width="130" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="kpT-ny-vgd"/>
+                                    <constraint firstAttribute="height" constant="18" id="tkQ-dT-oNQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-py-xIc">
+                                <rect key="frame" x="164" y="365" width="130" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="Rkd-ye-9AX"/>
+                                    <constraint firstAttribute="width" constant="130" id="Sy4-5C-Ai8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -177,7 +177,7 @@
                             <constraint firstItem="MTE-eI-AiJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="69" id="1Rz-ID-ANT"/>
                             <constraint firstItem="xDp-6n-xBy" firstAttribute="leading" secondItem="K2P-9o-db4" secondAttribute="leading" id="3iM-sG-USH"/>
                             <constraint firstItem="nl8-da-3zf" firstAttribute="leading" secondItem="RmS-bu-roK" secondAttribute="leading" id="3xh-XJ-07H"/>
-                            <constraint firstItem="twT-WO-Nrq" firstAttribute="top" secondItem="RmS-bu-roK" secondAttribute="bottom" constant="45" id="68W-2y-P7T"/>
+                            <constraint firstItem="twT-WO-Nrq" firstAttribute="top" secondItem="RmS-bu-roK" secondAttribute="bottom" constant="79" id="68W-2y-P7T"/>
                             <constraint firstItem="K2P-9o-db4" firstAttribute="trailing" secondItem="y9I-VN-3NX" secondAttribute="trailing" id="6gc-zj-Mzl"/>
                             <constraint firstItem="1y7-xY-VP6" firstAttribute="top" secondItem="1zs-Ja-rdq" secondAttribute="bottom" constant="15" id="7Gg-hL-Dpr"/>
                             <constraint firstItem="1y7-xY-VP6" firstAttribute="leading" secondItem="1zs-Ja-rdq" secondAttribute="leading" id="7w8-hv-zfd"/>
@@ -189,7 +189,7 @@
                             <constraint firstItem="nl8-da-3zf" firstAttribute="baseline" secondItem="Djo-py-xIc" secondAttribute="baseline" id="CZ5-NY-vgZ"/>
                             <constraint firstItem="xDp-6n-xBy" firstAttribute="top" secondItem="1y7-xY-VP6" secondAttribute="bottom" constant="52" id="DuD-Zw-Aqg"/>
                             <constraint firstItem="s9x-ic-44j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EDo-q8-UgG"/>
-                            <constraint firstItem="nl8-da-3zf" firstAttribute="top" secondItem="y9I-VN-3NX" secondAttribute="bottom" constant="14" id="Ev0-Fa-QRf"/>
+                            <constraint firstItem="nl8-da-3zf" firstAttribute="top" secondItem="y9I-VN-3NX" secondAttribute="bottom" constant="40" id="Ev0-Fa-QRf"/>
                             <constraint firstItem="Db9-6x-Fn1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="69" id="FH6-u6-bMC"/>
                             <constraint firstItem="K2P-9o-db4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-69" id="GfA-AJ-Dv1"/>
                             <constraint firstItem="xDp-6n-xBy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-69" id="KP7-ed-u1G"/>
@@ -198,7 +198,7 @@
                             <constraint firstItem="s9x-ic-44j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OyJ-7o-Ub6"/>
                             <constraint firstItem="zhf-vU-hP3" firstAttribute="leading" secondItem="IMf-Un-mwX" secondAttribute="leading" id="QH2-2X-6bK"/>
                             <constraint firstItem="xDp-6n-xBy" firstAttribute="trailing" secondItem="K2P-9o-db4" secondAttribute="trailing" id="Qzk-dP-6cx"/>
-                            <constraint firstItem="RmS-bu-roK" firstAttribute="top" secondItem="nl8-da-3zf" secondAttribute="bottom" constant="14" id="Rea-wB-441"/>
+                            <constraint firstItem="RmS-bu-roK" firstAttribute="top" secondItem="nl8-da-3zf" secondAttribute="bottom" constant="-46" id="Rea-wB-441"/>
                             <constraint firstItem="QmS-DZ-t1B" firstAttribute="trailing" secondItem="Db9-6x-Fn1" secondAttribute="trailing" id="SNe-Fr-tvg"/>
                             <constraint firstItem="y9I-VN-3NX" firstAttribute="leading" secondItem="nl8-da-3zf" secondAttribute="leading" id="Sif-wF-I7z"/>
                             <constraint firstItem="IMf-Un-mwX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Tb9-CN-9wW"/>
@@ -240,6 +240,7 @@
                         <outlet property="labelDescription" destination="1y7-xY-VP6" id="du5-30-PQp"/>
                         <outlet property="labelHumidity" destination="gug-pO-tw7" id="OHy-na-puS"/>
                         <outlet property="labelRainy" destination="Djo-py-xIc" id="6hN-9q-TX9"/>
+                        <outlet property="labelRainyInformation" destination="nl8-da-3zf" id="eXl-XF-Igx"/>
                         <outlet property="labelTemperature" destination="QmS-DZ-t1B" id="lOr-Kn-S5M"/>
                         <outlet property="labelWind" destination="MTE-eI-AiJ" id="clA-U8-osq"/>
                         <outlet property="textCity" destination="IMf-Un-mwX" id="uVg-zM-pES"/>

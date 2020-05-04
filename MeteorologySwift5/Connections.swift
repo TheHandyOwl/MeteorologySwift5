@@ -8,11 +8,24 @@
 
 import UIKit
 
+protocol getWeatherDelegate {
+    
+    func getWeatherDidFinish(weatherInfo : Weather)
+    func getWeatherDidFailWithError(error : NSError)
+    
+}
+
 class Connections {
 
     // Example -> "https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=myAPIKey"
     fileprivate let baseURL : String = "https://api.openweathermap.org/data/2.5/weather"
     fileprivate let openWeatherMapKey : String = "0f8c1e1b87cc8cf521195b272bc9a22c"
+    
+    fileprivate var delegate : getWeatherDelegate
+    
+    init(delegate: getWeatherDelegate) {
+        self.delegate = delegate
+    }
     
     // Request by city
     func requestWeatherByCity(_ city: String) {
@@ -54,9 +67,15 @@ extension Connections {
                     let parsedData = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : Any]
                     
                     let weather = Weather(datosTiempo: parsedData as [String : AnyObject])
+                    
+                    self.delegate.getWeatherDidFinish(weatherInfo: weather)
                     print("El tiempo tiene: \(weather)")
+                    
                 } catch let jsonError as NSError {
+                    
+                    self.delegate.getWeatherDidFailWithError(error: jsonError)
                     print("Error: \(jsonError)")
+                    
                 }
                 
             }

@@ -14,10 +14,12 @@ class ViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     var getWeather : Connections!
-
+    
     @IBOutlet weak var textCity: UITextField!
     @IBOutlet weak var labelCity: UILabel!
     @IBOutlet weak var labelDescription: UILabel!
+    
+    @IBOutlet weak var labelRainyInformation: UILabel!
     
     @IBOutlet weak var labelTemperature: UILabel!
     @IBOutlet weak var labelCloudy: UILabel!
@@ -30,20 +32,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getWeather = Connections(delegate: self)
+        
         setupUI()
         
         getLocation()
         
     }
-
+    
     @IBAction func buttonGetWeatherByCity(_ sender: Any) {
         
         guard let text = textCity.text, !text.trimmed.isEmpty else {
             return
         }
-        getWeather = Connections()
         getWeather.requestWeatherByCity(text.urlEncoded)
-
+        
     }
     
     @IBAction func buttonGetWeatherByGeolocation(_ sender: Any) {
@@ -54,7 +57,7 @@ class ViewController: UIViewController {
 extension ViewController {
     
     func setupUI() {
-
+        
         textCity.text = ""
         textCity.placeholder = "Buscar por nombre de ciudad ..."
         textCity.delegate = self // To hide keyboard
@@ -62,22 +65,25 @@ extension ViewController {
         
         labelCity.text = ""
         labelDescription.text = ""
-
+        
         labelTemperature.text = ""
         labelCloudy.text = ""
         labelWind.text = ""
-        labelRainy.text = ""
         labelHumidity.text = ""
-
+        labelRainy.text = ""
+        
+        labelRainyInformation.isHidden = true
+        labelRainy.isHidden = true
+        
         //imageBackground.image
         
     }
 }
 
 extension ViewController : CLLocationManagerDelegate {
-
+    
     func getLocation() {
-            
+        
         locationManager.delegate = self
         
         // Permissions
@@ -100,7 +106,7 @@ extension ViewController : CLLocationManagerDelegate {
         
         let latitude : Double = locValue.latitude
         let longitude : Double = locValue.longitude
-
+        
         print("Latitude: \(latitude) and longitude: \(longitude)")
         
     }
@@ -113,7 +119,54 @@ extension ViewController : CLLocationManagerDelegate {
         
         alertView.addAction(button)
         dismiss(animated: true, completion: nil)
+        
+    }
+    
+}
 
+extension ViewController : getWeatherDelegate {
+    func getWeatherDidFinish(weatherInfo: Weather) {
+        print("getWeatherDidFinish")
+        
+        // Main thread
+        DispatchQueue.main.async {
+            self.labelCity.text = weatherInfo.city
+            self.labelDescription.text = weatherInfo.weatherDescription
+            
+            self.labelTemperature.text = "\(Int(round(weatherInfo.tempCelsius)))"
+            self.labelCloudy.text = "\(weatherInfo.clouds)%"
+            self.labelWind.text = "\(weatherInfo.windSpeed) m/s"
+            self.labelHumidity.text = "\(weatherInfo.humidity)%"
+            
+            if let rainy3h = weatherInfo.rain3Hours {
+                self.labelRainyInformation.isHidden = false
+                self.labelRainy.isHidden = false
+                self.labelRainy.text = "\(rainy3h) mm"
+            } else {
+                self.labelRainyInformation.isHidden = true
+                self.labelRainy.isHidden = true
+            }
+            
+            //self.imageBackground.image
+            
+            self.locationManager.stopUpdatingLocation()
+            
+        }
+        
+    }
+    
+    func getWeatherDidFailWithError(error: NSError) {
+        print("getWeatherDidFailWithError")
+        
+        // Main thread
+        DispatchQueue.main.async {
+            
+            let alert = UIAlertController(title: "Error", message: "Error: \(error.description)", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(ok)
+            self.present(self, animated: true, completion: nil)
+        }
+        
     }
     
 }
