@@ -50,6 +50,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonGetWeatherByGeolocation(_ sender: Any) {
+        getLocation()
     }
     
 }
@@ -108,6 +109,8 @@ extension ViewController : CLLocationManagerDelegate {
         let longitude : Double = locValue.longitude
         
         print("Latitude: \(latitude) and longitude: \(longitude)")
+
+        getWeather.requestWeatherByLocation(latitude: latitude, longitude: longitude)
         
     }
     
