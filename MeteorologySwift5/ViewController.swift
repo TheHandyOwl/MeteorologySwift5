@@ -76,8 +76,25 @@ extension ViewController {
         labelRainyInformation.isHidden = true
         labelRainy.isHidden = true
         
-        //imageBackground.image
+        imageBackground.image = UIImage(named: "sun")
         
+    }
+    
+    func changeBackgroudWithTemperature(temperature: Double) {
+        let image : UIImage!
+        switch temperature {
+        case ...5:
+            image = UIImage(named: "winter")
+        case 5..<15:
+            image = UIImage(named: "clouds")
+        case 15...:
+            image = UIImage(named: "sun")
+        default:
+            return
+        }
+        if let newImage = image {
+            imageBackground.image = newImage
+        }
     }
 }
 
@@ -151,6 +168,7 @@ extension ViewController : getWeatherDelegate {
             }
             
             //self.imageBackground.image
+            self.changeBackgroudWithTemperature(temperature: weatherInfo.tempCelsius)
             
             self.locationManager.stopUpdatingLocation()
             
