@@ -16,6 +16,7 @@
 		073E82FE245F2C5300E40CB8 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073E82FD245F2C5300E40CB8 /* Weather.swift */; };
 		073E8300245F3BA600E40CB8 /* Connections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073E82FF245F3BA600E40CB8 /* Connections.swift */; };
 		073E8302245F763300E40CB8 /* DefaultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073E8301245F763300E40CB8 /* DefaultExtensions.swift */; };
+		0789AF472466CBDF00A5059F /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789AF462466CBDF00A5059F /* FavoriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		073E82FD245F2C5300E40CB8 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		073E82FF245F3BA600E40CB8 /* Connections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connections.swift; sourceTree = "<group>"; };
 		073E8301245F763300E40CB8 /* DefaultExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExtensions.swift; sourceTree = "<group>"; };
+		0789AF462466CBDF00A5059F /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +66,11 @@
 			children = (
 				073E82E9245EDEC500E40CB8 /* AppDelegate.swift */,
 				073E82EB245EDEC500E40CB8 /* SceneDelegate.swift */,
-				073E82ED245EDEC500E40CB8 /* ViewController.swift */,
 				073E82FF245F3BA600E40CB8 /* Connections.swift */,
 				073E8301245F763300E40CB8 /* DefaultExtensions.swift */,
 				073E82FD245F2C5300E40CB8 /* Weather.swift */,
+				0789AF462466CBDF00A5059F /* FavoriteViewController.swift */,
+				073E82ED245EDEC500E40CB8 /* ViewController.swift */,
 				073E82EF245EDEC500E40CB8 /* Main.storyboard */,
 				073E82F2245EDEC800E40CB8 /* Assets.xcassets */,
 				073E82F4245EDEC800E40CB8 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 				073E82FE245F2C5300E40CB8 /* Weather.swift in Sources */,
 				073E8302245F763300E40CB8 /* DefaultExtensions.swift in Sources */,
 				073E82EE245EDEC500E40CB8 /* ViewController.swift in Sources */,
+				0789AF472466CBDF00A5059F /* FavoriteViewController.swift in Sources */,
 				073E8300245F3BA600E40CB8 /* Connections.swift in Sources */,
 				073E82EA245EDEC500E40CB8 /* AppDelegate.swift in Sources */,
 				073E82EC245EDEC500E40CB8 /* SceneDelegate.swift in Sources */,

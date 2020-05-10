@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     var getWeather : Connections!
+    var weatherFavoriteDict = [String : String]()
     
     @IBOutlet weak var textCity: UITextField!
     @IBOutlet weak var labelCity: UILabel!
@@ -53,6 +54,11 @@ class ViewController: UIViewController {
         getLocation()
     }
     
+    @IBAction func saveFavoriteCity(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(self.weatherFavoriteDict, forKey: "favoriteWeather")
+    }
+    
 }
 
 extension ViewController {
@@ -84,11 +90,17 @@ extension ViewController {
         let image : UIImage!
         switch temperature {
         case ...5:
-            image = UIImage(named: "winter")
+            let imageName = "winter"
+            image = UIImage(named: imageName)
+            UserDefaults.standard.setValue(imageName, forKey: "backgroundImage")
         case 5..<15:
-            image = UIImage(named: "clouds")
+        let imageName = "clouds"
+            image = UIImage(named: imageName)
+            UserDefaults.standard.setValue(imageName, forKey: "backgroundImage")
         case 15...:
-            image = UIImage(named: "sun")
+        let imageName = "sun"
+            image = UIImage(named: imageName)
+            UserDefaults.standard.setValue(imageName, forKey: "backgroundImage")
         default:
             return
         }
@@ -153,7 +165,7 @@ extension ViewController : getWeatherDelegate {
             self.labelCity.text = weatherInfo.city
             self.labelDescription.text = weatherInfo.weatherDescription
             
-            self.labelTemperature.text = "\(Int(round(weatherInfo.tempCelsius)))"
+            self.labelTemperature.text = "\(Int(round(weatherInfo.tempCelsius)))º"
             self.labelCloudy.text = "\(weatherInfo.clouds)%"
             self.labelWind.text = "\(weatherInfo.windSpeed) m/s"
             self.labelHumidity.text = "\(weatherInfo.humidity)%"
@@ -169,6 +181,15 @@ extension ViewController : getWeatherDelegate {
             
             //self.imageBackground.image
             self.changeBackgroudWithTemperature(temperature: weatherInfo.tempCelsius)
+            
+            self.weatherFavoriteDict = [
+                "city": self.labelCity.text!,
+                "weather": self.labelDescription.text!,
+                "temperature": self.labelTemperature.text!,
+                "clouds": self.labelCloudy.text!,
+                "wind": self.labelWind.text!,
+                "humidity": self.labelHumidity.text!
+            ]
             
             self.locationManager.stopUpdatingLocation()
             
