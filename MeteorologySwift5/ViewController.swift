@@ -48,6 +48,9 @@ class ViewController: UIViewController {
         }
         getWeather.requestWeatherByCity(text.urlEncoded)
         
+        #warning("WARNING: PUT YOUR OWN APIKEY: api.openweathermap.org")
+        showToast(message: "Change API-Key", font: UIFont(name: "Times New Roman", size: 19.0)!)
+        
     }
     
     @IBAction func buttonGetWeatherByGeolocation(_ sender: Any) {

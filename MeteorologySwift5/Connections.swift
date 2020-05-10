@@ -16,15 +16,34 @@ protocol getWeatherDelegate {
 }
 
 class Connections {
-
+    
     // Example -> "https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=myAPIKey"
     fileprivate let baseURL : String = "https://api.openweathermap.org/data/2.5/weather"
-    fileprivate let openWeatherMapKey : String = "0f8c1e1b87cc8cf521195b272bc9a22c"
+    #warning("WARNING: PUT YOUR OWN APIKEY: api.openweathermap.org")
+    fileprivate let openWeatherMapKey : String = "1234567890"
     
     fileprivate var delegate : getWeatherDelegate
     
     init(delegate: getWeatherDelegate) {
         self.delegate = delegate
+        if openWeatherMapKey == "1234567890" {
+            print("""
+
+
+
+
+                ==============================
+                ==
+                == Do you have your own APIkey?
+                ==
+                ==============================
+
+
+
+
+
+                """)
+        }
     }
     
     // Request by city
@@ -55,7 +74,7 @@ extension Connections {
         let urlRequest : NSMutableURLRequest = NSMutableURLRequest(url: weatherRequestURL)
         
         let task = session.dataTask(with: urlRequest as URLRequest) { (data, response, error) -> Void in
-
+            
             let httpResponse = response as! HTTPURLResponse
             
             let statusCode = httpResponse.statusCode
@@ -85,5 +104,5 @@ extension Connections {
         task.resume()
         
     }
-
+    
 }
